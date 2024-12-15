@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/menuItemLayout.astro
+layout: ../../layouts/MenuItemLayout.astro
 name: Cafe
 description: an apple pie made with love.
 price: 800
