@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allItems = Object.values(
+  import.meta.glob("../menuItems/*md", { eager: true })
+);
+const allergies = [
+  ...new Set(allItems.map((item: any) => item.frontmatter.allergies).flat()),
+];
+const pageTitle = "Allergy index";
+---
+
+<BaseLayout title={pageTitle}>
+  <div>
+    {
+      allergies.map((allergy) => (
+        <p>
+          <a href={`/allergies/${allergy}`}>{allergy}</a>
+        </p>
+      ))
+    }
+  </div>
+</BaseLayout>

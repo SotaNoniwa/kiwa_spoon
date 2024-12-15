@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const allItems = Object.values(
+  import.meta.glob("./menuItems/*.md", { eager: true })
+);
+---
+
+<BaseLayout title="menu">
+  <ul>
+    {
+      allItems.map((item: any) => (
+        <li>
+          <a href={item.url}>{item.frontmatter.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

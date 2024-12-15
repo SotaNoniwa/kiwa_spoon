@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import sampleImage from "../assets/sample.jpg";
+const year = new Date().getFullYear();
+---
+
+<footer class="footer py-8 px-8 md:px-16 bg-black text-white">
+  <div class="max-w-6xl mx-auto text-center">
+    <p class="text-sm">&copy; {year} Kiwa spoon. All rights reserved.</p>
+    <div class="social-links mt-4 flex justify-center gap-4">
+      <a href="#" class="hover:text-red-500">Instagram</a>
+      <a href="#" class="hover:text-red-500">Facebook</a>
+      <a href="#" class="hover:text-red-500">Twitter</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const allItems = Object.values(
+    import.meta.glob("../menuItems/*.md", { eager: true })
+  );
+
+  const uniqueAllergies = [
+    ...new Set(allItems.map((item: any) => item.frontmatter.allergies).flat()),
+  ];
+
+  return uniqueAllergies.map((allergy) => {
+    const itemsWithoutAllergies = allItems.filter(
+      (item: any) => !item.frontmatter.allergies.includes(allergy)
+    );
+    return {
+      params: { allergy },
+      props: { items: itemsWithoutAllergies },
+    };
+  });
+}
+
+const { allergy } = Astro.params;
+const { items } = Astro.props;
+---
+
+<BaseLayout title="allegies">
+  <p>Menu item without <b>{allergy}</b> allergy</p>
+  <ul>
+    {
+      items.map((item: any) => (
+        <li>
+          <a href={item.url}>{item.frontmatter.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

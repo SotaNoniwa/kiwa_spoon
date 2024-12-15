@@ -1,11 +1,80 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import heroImage from "../assets/店内.jpg";
+import MenuItem from "../components/MenuItem.tsx";
+import { shuffleArray } from "../scripts/shuffleArray";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const allItems = Object.values(
+  import.meta.glob("./menuItems/*.md", { eager: true })
+);
+
+const shuffledItems = shuffleArray(allItems).slice(0, 2);
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <div class="relative hero h-screen">
+    <Image
+      src={heroImage}
+      alt="hero image"
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    />
+    <div
+      class="flex flex-col justify-center items-center h-full bg-black/50 px-8 relative"
+    >
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">KIWA SPOON</h1>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about py-16 px-8 md:px-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">京丹波の隠れ家レストラン</h2>
+      <p class="text-left text-lg leading-relaxed text-gray-700">
+        Lorem ipsum odor amet, consectetuer adipiscing elit. Nisl facilisis ac
+        maximus etiam a fusce dui. Nibh magnis consectetur ridiculus lacinia
+        odio in pellentesque. Ac sagittis urna dictumst aliquet dignissim hac
+        porta rhoncus. Tempus ridiculus sed penatibus massa duis lacinia magnis
+        eget ultricies. Hac parturient sed dignissim volutpat scelerisque
+        rhoncus fringilla massa eget. Metus ultrices a pulvinar primis vehicula
+        rutrum posuere efficitur.
+      </p>
+    </div>
+  </section>
+
+  <!-- Menu Items Section -->
+  <section class="menu-items py-16 px-8 md:px-16 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-8">メニュー</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {
+          shuffledItems.map((item: any) => (
+            <MenuItem
+              name={item.frontmatter.name}
+              description={item.frontmatter.description}
+              price={item.frontmatter.price}
+              allergies={item.frontmatter.allegies}
+              image={item.frontmatter.image}
+              url={item.url}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact py-16 px-8 md:px-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">予約</h2>
+      <p class="text-lg text-gray-700 mb-8">ご予約はこちらから</p>
+      <p>TEL: xxx-xxxx-xxxx</p>
+      <p>受付時間: 10:00-19:00</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- TODO: create about page and reservation form -->
+
+<script></script>

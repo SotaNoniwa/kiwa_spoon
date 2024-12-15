@@ -1,0 +1,23 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { Image } from "astro:assets";
+
+// const { frontmatter } = Astro.props;
+const { name, description, price, allegies, image } = Astro.props.frontmatter;
+---
+
+<BaseLayout title={name}>
+  <h1>{name}</h1>
+  <p>Price: {price}</p>
+  <p>
+    Description: {description.toString().slice(0, 20)}<a href="/">...</a>
+  </p>
+  <Image
+    src={image.src}
+    alt={image.alt}
+    loading="lazy"
+    width="200"
+    height="200"
+  />
+  <slot />
+</BaseLayout>

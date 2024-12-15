@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+let num: number = 100;
+let nums: number[] = [1, 2, 3];
+---
+
+<BaseLayout title="about">
+  <a href="/">home page</a>
+  <br />
+  {num === 100 ? <p>num is 100</p> : <p>num is other</p>}
+  {num >= 50 && <p>num is over 50 or equeal</p>}
+  {nums.map((n) => <li>{n}</li>)}
+</BaseLayout>
