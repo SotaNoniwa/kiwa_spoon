@@ -1,10 +1,11 @@
 ---
 layout: ../../layouts/MenuItemLayout.astro
-name: コース
+name: ローストビーフ(course)
+menuType: course
 description: an apple pie made with love.
-price: 800
-allergies: [apple, milk, cinamon]
+price: 1200
+allergies: []
 image:
-  src: /src/assets/course_example.jpg
+  src: /src/assets/mango_muse.jpg
   alt: "sample image"
 ---

@@ -1,10 +1,11 @@
 ---
 layout: ../../layouts/MenuItemLayout.astro
-name: Cafe
+name: シーザーサラダ(course)
+menuType: course
 description: an apple pie made with love.
-price: 800
+price: 1000
 allergies: [apple, milk, cinamon]
 image:
-  src: /src/assets/cafe_one_plate.jpg
+  src: /src/assets/mango_muse.jpg
   alt: "sample image"
 ---
