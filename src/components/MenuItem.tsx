@@ -31,15 +31,13 @@ const MenuItem = ({
       </div>
       <div className="p-4">
         <h3 className="text-lg font-bold text-gray-900 mb-2">{name}</h3>
-        <p className="text-sm text-gray-600 mb-4">
-          {description.slice(0, 50)}...
-        </p>
+        <p className="text-sm text-gray-600 mb-4">{description}</p>
         <p className="text-gray-900 font-semibold">
           &yen;{formatCurrency(price)}
         </p>
         {allergies.length > 0 && (
           <p className="text-sm text-gray-500">
-            <strong>Allergies:</strong> {allergies.join(", ")}
+            <strong>アレルギー:</strong> {allergies.join(", ")}
           </p>
         )}
       </div>

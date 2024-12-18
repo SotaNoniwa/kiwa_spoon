@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import heroImage from "../assets/店内.jpg";
 import MenuPanel from "../components/MenuPanel.tsx";
-import MenuItem from "../components/MenuItem.tsx";
 import { shuffleArray } from "../scripts/shuffleArray";
 
 const allItems = Object.values(
@@ -52,26 +51,13 @@ const shuffledItems = shuffleArray(allItems).slice(0, 2);
         <MenuPanel
           title="Cafe Menu"
           link="/cafeMenu"
-          imageSrc="/src/assets/cafe_menu.jpg"
+          imageSrc="/public/sample.jpg"
         />
         <MenuPanel
           title="Course Menu"
           link="/courseMenu"
           imageSrc="/src/assets/course_menu.jpg"
         />
-        <!-- <MenuPanel title="Course Menu" /> -->
-        <!-- {
-          shuffledItems.map((item: any) => (
-            <MenuItem
-              name={item.frontmatter.name}
-              description={item.frontmatter.description}
-              price={item.frontmatter.price}
-              allergies={item.frontmatter.allegies}
-              image={item.frontmatter.image}
-              url={item.url}
-            />
-          ))
-        } -->
       </div>
     </div>
   </section>
