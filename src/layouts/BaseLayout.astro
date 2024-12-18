@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import DropDownMenu from "../components/DropDownMenu.tsx";
 const { title } = Astro.props;
 ---
 
@@ -12,6 +13,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <DropDownMenu client:load />
     <slot />
     <Footer />
   </body>
