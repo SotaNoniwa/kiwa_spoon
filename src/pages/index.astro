@@ -1,15 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import heroImage from "../assets/店内.jpg";
+import heroImage from "/public/店内.jpg";
 import MenuPanel from "../components/MenuPanel.tsx";
-import { shuffleArray } from "../scripts/shuffleArray";
-
-const allItems = Object.values(
-  import.meta.glob("./menuItems/*.md", { eager: true })
-);
-
-const shuffledItems = shuffleArray(allItems).slice(0, 2);
 ---
 
 <BaseLayout title="Home">
@@ -48,11 +41,15 @@ const shuffledItems = shuffleArray(allItems).slice(0, 2);
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl font-bold text-center mb-8">メニュー</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <MenuPanel title="Cafe Menu" link="/cafeMenu" imageSrc="/sample.jpg" />
+        <MenuPanel
+          title="Cafe Menu"
+          link="/cafeMenu"
+          imageSrc="/cafe_menu.jpg"
+        />
         <MenuPanel
           title="Course Menu"
           link="/courseMenu"
-          imageSrc="/src/assets/course_menu.jpg"
+          imageSrc="/course_menu.jpg"
         />
       </div>
     </div>
