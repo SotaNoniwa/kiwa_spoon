@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MenuItemLayout.astro
 menuType: cafe
 price: 1600
 image:

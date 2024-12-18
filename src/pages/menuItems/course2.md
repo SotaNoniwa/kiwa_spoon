@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MenuItemLayout.astro
 menuType: course
 price: 1000
 image:
