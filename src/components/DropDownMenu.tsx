@@ -3,7 +3,7 @@ import { Fragment } from "react";
 
 function DropDownMenu() {
   return (
-    <div className="fixed top-4 right-4">
+    <div className="fixed top-4 right-4 z-50">
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <MenuButton className="inline-flex justify-center w-full rounded-full border-2 border-orange-400 shadow-sm px-4 py-2 bg-transparent text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -52,7 +52,7 @@ function DropDownMenu() {
                 href="/courseMenu"
                 className="hover:bg-gray-100 hover:text-gray-900 text-gray-700 block px-4 py-2 text-sm"
               >
-                Course menu
+                Course Menu
               </a>
             </MenuItem>
           </div>
