@@ -33,6 +33,7 @@ const MenuItemWrapper = ({
                     allergies={item.frontmatter.jp.allergies}
                     image={item.frontmatter.image}
                     url={item.frontmatter.url}
+                    lang={lang}
                   />
                 ))
               : filteredItems.map((item: any) => (
@@ -40,9 +41,10 @@ const MenuItemWrapper = ({
                     name={item.frontmatter.en.name}
                     description={item.frontmatter.en.description}
                     price={item.frontmatter.price}
-                    allergies={item.frontmatter.jp.allergies}
+                    allergies={item.frontmatter.en.allergies}
                     image={item.frontmatter.image}
                     url={item.frontmatter.url}
+                    lang={lang}
                   />
                 ))}
           </div>

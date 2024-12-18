@@ -7,7 +7,7 @@ image:
 jp:
   name: ローストビーフ
   description: 日本語の説明文...
-  allergies: [apple]
+  allergies: [リンゴ]
 en:
   name: Roasted beef
   description: English description...

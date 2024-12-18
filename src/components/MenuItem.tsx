@@ -7,6 +7,7 @@ interface IProps {
   allergies: string[];
   image: { src: string; alt: string };
   url: string;
+  lang: string;
 }
 
 const MenuItem = ({
@@ -16,6 +17,7 @@ const MenuItem = ({
   allergies,
   image,
   url,
+  lang,
 }: IProps) => {
   return (
     <a
@@ -35,11 +37,16 @@ const MenuItem = ({
         <p className="text-gray-900 font-semibold">
           &yen;{formatCurrency(price)}
         </p>
-        {allergies.length > 0 && (
-          <p className="text-sm text-gray-500">
-            <strong>アレルギー:</strong> {allergies.join(", ")}
-          </p>
-        )}
+        {allergies.length > 0 &&
+          (lang === "jp" ? (
+            <p className="text-sm text-gray-500">
+              <strong>アレルギー:</strong> {allergies.join(", ")}
+            </p>
+          ) : (
+            <p className="text-sm text-gray-500">
+              <strong>Allergies:</strong> {allergies.join(", ")}
+            </p>
+          ))}
       </div>
     </a>
   );
