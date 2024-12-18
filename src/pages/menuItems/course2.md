@@ -1,11 +1,16 @@
 ---
 layout: ../../layouts/MenuItemLayout.astro
-name: シーザーサラダ(course)
 menuType: course
-description: an apple pie made with love.
 price: 1000
-allergies: [apple, milk, cinamon]
 image:
   src: /mango_muse.jpg
   alt: "sample image"
+jp:
+  name: シーザーサラダ
+  description: 日本語の説明文...
+  allergies: []
+en:
+  name: Ceasar Salad
+  description: English description...
+  allergies: []
 ---

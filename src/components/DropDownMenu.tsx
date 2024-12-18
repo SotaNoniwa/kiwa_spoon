@@ -1,7 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { Fragment } from "react";
 
-function DropDownMenu() {
+function DropDownMenu({ lang }: any) {
   return (
     <div className="fixed top-4 right-4 z-50">
       <Menu as="div" className="relative inline-block text-left">
@@ -25,7 +25,7 @@ function DropDownMenu() {
           <div className="py-1">
             <MenuItem as={Fragment}>
               <a
-                href="/"
+                href={lang === "jp" ? "/" : "/en"}
                 className="hover:bg-gray-100 hover:text-gray-900 text-gray-700 block px-4 py-2 text-sm"
               >
                 Home
@@ -33,7 +33,7 @@ function DropDownMenu() {
             </MenuItem>
             <MenuItem as={Fragment}>
               <a
-                href="/about"
+                href={lang === "jp" ? "/about" : "/en/about"}
                 className="hover:bg-gray-100 hover:text-gray-900 text-gray-700 block px-4 py-2 text-sm"
               >
                 About
@@ -41,7 +41,7 @@ function DropDownMenu() {
             </MenuItem>
             <MenuItem as={Fragment}>
               <a
-                href="/cafeMenu"
+                href={lang === "jp" ? "/cafeMenu" : "/en/cafeMenu"}
                 className="hover:bg-gray-100 hover:text-gray-900 text-gray-700 block px-4 py-2 text-sm"
               >
                 Cafe Menu
@@ -49,7 +49,7 @@ function DropDownMenu() {
             </MenuItem>
             <MenuItem as={Fragment}>
               <a
-                href="/courseMenu"
+                href={lang === "jp" ? "/courseMenu" : "/en/courseMenu"}
                 className="hover:bg-gray-100 hover:text-gray-900 text-gray-700 block px-4 py-2 text-sm"
               >
                 Course Menu

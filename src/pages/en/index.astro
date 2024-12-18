@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import heroImage from "/public/店内.jpg";
+import MenuPanel from "../../components/MenuPanel.tsx";
+---
+
+<BaseLayout title="Home" lang="en">
+  <!-- Hero Section -->
+  <div class="relative hero h-screen">
+    <Image
+      src={heroImage}
+      alt="hero image"
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    />
+    <div
+      class="flex flex-col justify-center items-center h-full bg-black/50 px-8 relative"
+    >
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">KIWA SPOON</h1>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about py-16 px-8 md:px-16 bg-gray-200">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">Hidden gem in Kyo-Tanba</h2>
+      <p class="text-left text-lg leading-relaxed text-gray-700">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+  </section>
+
+  <!-- Menu Items Section -->
+  <section class="menu-items py-16 px-8 md:px-16 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-8">Menu</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <MenuPanel
+          title="Cafe Menu"
+          link="/en/cafeMenu"
+          imageSrc="/cafe_menu.jpg"
+        />
+        <MenuPanel
+          title="Course Menu"
+          link="/en/courseMenu"
+          imageSrc="/course_menu.jpg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact py-16 px-8 md:px-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">Reservation</h2>
+      <p class="text-lg text-gray-700 mb-8">You can reserve here</p>
+      <p>TEL: xxx-xxxx-xxxx</p>
+      <p>Available Duration: 10:00-19:00</p>
+      <p>-- Reservation System --</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script></script>

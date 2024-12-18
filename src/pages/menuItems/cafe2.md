@@ -1,11 +1,16 @@
 ---
 layout: ../../layouts/MenuItemLayout.astro
-name: コーヒー(cafe)
 menuType: cafe
-description: an apple pie made with love.
-price: 1000
-allergies: [apple, milk, cinamon]
+price: 800
 image:
   src: /mango_muse.jpg
   alt: "sample image"
+jp:
+  name: コーヒー
+  description: 日本語の説明文...
+  allergies: []
+en:
+  name: Coffee
+  description: English description...
+  allergies: []
 ---
